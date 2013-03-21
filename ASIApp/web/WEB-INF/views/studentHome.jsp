@@ -58,6 +58,13 @@
                     <div class="grid_12">
                         <div class="wrap pad-3">
 
+                            <c:if test="${not empty msg}">
+                                <h4 align="center"><font color="green">${msg}</font></h4><br/>
+                            </c:if>
+
+                            <c:if test="${not empty successMsg}">
+                                <h4 align="center"><font color="green">${successMsg}</font></h4><br/>
+                            </c:if>
 
                             <div class="block-5">
                                 <h3 class="p5">Profile</h3>
