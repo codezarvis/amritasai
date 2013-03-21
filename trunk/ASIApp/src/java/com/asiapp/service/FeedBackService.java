@@ -5,6 +5,7 @@
 package com.asiapp.service;
 
 import com.asiapp.domain.sub.FeedBack;
+import java.util.List;
 
 /**
  *
@@ -13,4 +14,9 @@ import com.asiapp.domain.sub.FeedBack;
 public interface FeedBackService extends Service {
 
     void create(FeedBack feedBack);
+
+    FeedBack checkForFeedBack(String studentId, String departmentName, String year, String semister, String subjectName);
+
+    List<FeedBack> getTotalFeedBackPoints(String departmentName, String year, String semister, String subjectName, String facultyName);
+
 }
