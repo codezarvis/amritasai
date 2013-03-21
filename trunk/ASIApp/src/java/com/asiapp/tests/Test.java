@@ -5,7 +5,7 @@
 
 package com.asiapp.tests;
 
-import com.asiapp.domain.sub.Subject;
+import com.asiapp.domain.sub.FeedBack;
 import com.asiapp.utils.service.ServiceUtils;
 import java.util.List;
 import org.apache.log4j.Logger;
@@ -37,9 +37,26 @@ public class Test {
 //        LOG.debug(appUser);
 
 
-        List<Subject> list = ServiceUtils.getStudentService().getSubjects("1111");
-        LOG.debug(list);
+//        List<Subject> list = ServiceUtils.getStudentService().getSubjects("1111");
+//        LOG.debug(list);
 
+
+//        FeedBack feedBack = ServiceUtils.getFeedbackService().checkForFeedBack("1112", "Computer Science Engineering", "Year - I", "1", "Java");
+//        LOG.debug(feedBack);
+
+
+        List<FeedBack> list = ServiceUtils.getFeedbackService().getTotalFeedBackPoints("Computer Science Engineering", "Year - I", "1", "Java","Kiran Kumar");
+        
+        Integer totalMarks = 0;
+        LOG.debug("Number of Persons Given FeedBack : "+list.size());
+        LOG.debug("Total Number of Points  : "+(list.size() * 30));
+        for(FeedBack feedBack : list) {
+            totalMarks =  totalMarks + Integer.parseInt(feedBack.getFeedBackTotal());
+        }
+
+        LOG.debug("Faculty Score : "+totalMarks);
+
+        
 
     }
 }
