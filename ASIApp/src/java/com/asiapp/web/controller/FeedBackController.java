@@ -35,8 +35,16 @@ public class FeedBackController {
         Student student = (Student) request.getAttribute("student", WebRequest.SCOPE_SESSION);
         AppUser appUser = (AppUser) request.getAttribute("appUser", WebRequest.SCOPE_SESSION);
 
+        LOG.debug(feedBackForm);
         FacultyMap facultyMap = ServiceUtils.getFacultyMapService().findFacultyBySubject(subjectName);
         LOG.debug("Faculty Subject & name : " + facultyMap.getSubjectName() + " " + facultyMap.getFacultyName());
+
+         FeedBack feedBackObj = ServiceUtils.getFeedbackService().checkForFeedBack(student.getStudentId(), student.getDepartmentName(), student.getYear(), student.getSemister(), subjectName);
+        if (feedBackObj != null) {
+            LOG.debug("FeedBack Posted for this Subject");
+            request.setAttribute("msg", "FeedBack Already Given For the Subject !", WebRequest.SCOPE_REQUEST);
+            return "/studentHome";
+        }
 
         request.setAttribute("facultyMap", facultyMap, WebRequest.SCOPE_SESSION);
 
@@ -46,6 +54,8 @@ public class FeedBackController {
     @RequestMapping(method = RequestMethod.POST)
     public String postFeedback(@ModelAttribute FeedBackForm feedBackForm, WebRequest request) {
 
+       
+
         String[] pun = feedBackForm.getPun();
         String[] comm = feedBackForm.getComm();
         String[] cls = feedBackForm.getCls();
@@ -54,7 +64,7 @@ public class FeedBackController {
         String[] busg = feedBackForm.getBusg();
 
         LOG.debug(feedBackForm);
-        
+
         LOG.debug(pun[0]);
         LOG.debug(comm[0]);
         LOG.debug(cls[0]);
@@ -81,8 +91,8 @@ public class FeedBackController {
         feedBack.setActive(1);
 
         ServiceUtils.getFeedbackService().create(feedBack);
-        request.setAttribute("successMsg", "Feedback Posted for the Subject "+feedBack.getSubjectName(), WebRequest.SCOPE_REQUEST);
-        
-        return "/feedback";
+        request.setAttribute("successMsg", "Feedback Posted for the Subject " + feedBack.getSubjectName(), WebRequest.SCOPE_REQUEST);
+
+        return "/studentHome";
     }
 }
