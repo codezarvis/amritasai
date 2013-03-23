@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Reguster Student</title>
+        <title>Register Student</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/resources/css/reset.css">
         <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css">
@@ -44,7 +44,7 @@
 
 
 
-                $("#semValue").change(function(){
+                /*$("#semValue").change(function(){
                     var year = $("#year").val();
                     var departmentName = $("#departmentName").val();
                     var semValue = $("#semValue").val();
@@ -70,7 +70,7 @@
 
                     });
 
-                });
+                });*/
 
 
                 $("#year").change(function(){
@@ -214,9 +214,8 @@
                     <div>
                         <ul class="menu">
                             <li class="home-page" class="current"><a href="${pageContext.request.contextPath}/admin"><span></span></a></li>
-                            <li ><a href="#">Services</a></li>
-                            <li><a href="#">Change Password</a></li>
-                            <li><a href="#">Reports</a></li>
+                           
+                            <li><a href="${pageContext.request.contextPath}/reports">Reports</a></li>
                             <li><a href="${pageContext.request.contextPath}/signout">Signout</a></li>
                         </ul>
 
@@ -257,10 +256,10 @@
                                             </sf:select>
 
                                         </label>
-                                        <label><sf:select path="subject" id="subject">
-                                                <sf:option value="Select Subject">Select Subject</sf:option>
+                                        <label><sf:hidden path="subject" id="subject" value="subject"/>
+                                                
 
-                                            </sf:select>
+                                            
                                         </label>
 
                                     </fieldset>
