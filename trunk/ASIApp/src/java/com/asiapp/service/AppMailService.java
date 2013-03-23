@@ -21,6 +21,8 @@ public interface AppMailService extends Service {
     void setVelocityEngine(VelocityEngine velocityEngine);
     
     void sendMail(final Student student, final AppUser appUser);
+
+    void sendPassword(final Student student, final AppUser appUser);
     
    
 }
