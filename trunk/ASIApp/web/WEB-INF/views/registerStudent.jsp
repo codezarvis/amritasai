@@ -44,34 +44,6 @@
 
 
 
-                /*$("#semValue").change(function(){
-                    var year = $("#year").val();
-                    var departmentName = $("#departmentName").val();
-                    var semValue = $("#semValue").val();
-
-                    alert(year+' '+departmentName+' '+semValue);
-                    $.ajax({
-                        type:'GET',
-                        url:'${pageContext.request.contextPath}/facultyMap',
-                        data:'departmentName='+departmentName+'&year='+year+'&semValue='+semValue,
-                        dataType:'json',
-                        success : function(response) {
-                            var $select = $('#subject');
-                            $select.find('option').remove();
-
-                            $.each(response, function(key, value) {
-                                $('<option selected=selected>').val(0).text('Select Subject').appendTo(semValue);
-                                $('<option>').val(value).text(value).appendTo($select);
-                            });
-
-                        }
-
-
-
-                    });
-
-                });*/
-
 
                 $("#year").change(function(){
                     var year = $("#year").val();
@@ -139,10 +111,7 @@
                         return false;
                     }
 
-                    /*if(isMobile(mobile)) {
-                        alert('Invalid Mobile Number');
-                        return false;
-                    }*/
+                   
 
                     if(address == null || address.length == 0) {
                         alert('Address is required !');
