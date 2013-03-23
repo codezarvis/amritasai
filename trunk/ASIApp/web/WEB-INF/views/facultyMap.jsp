@@ -83,7 +83,7 @@
                     var departmentName = $("#departmentName").val();
                     var semValue = $("#semValue").val();
 
-                    alert(year+' '+departmentName+' '+semValue);
+                    
                     $.ajax({
                         type:'GET',
                         url:'${pageContext.request.contextPath}/facultyMap',
@@ -159,9 +159,8 @@
                     <div>
                         <ul class="menu">
                             <li class="home-page" class="current"><a href="${pageContext.request.contextPath}/admin"><span></span></a></li>
-                            <li ><a href="#">Services</a></li>
-                            <li><a href="#">Change Password</a></li>
-                            <li><a href="#">Reports</a></li>
+                           
+                            <li><a href="${pageContext.request.contextPath}/reports">Reports</a></li>
                             <li><a href="${pageContext.request.contextPath}/signout">Signout</a></li>
                         </ul>
 
@@ -181,7 +180,7 @@
                                     <li><a href="${pageContext.request.contextPath}/createSubject">Create Subject</a></li>
                                     <li><a href="${pageContext.request.contextPath}/faculty">Register Faculty</a></li>
                                     <li><a href="${pageContext.request.contextPath}/facultyMap">Faculty Mapping</a></li>
-                                    <li><a href="#">Register Student</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/registerStudent">Register Student</a></li>
 
 
                                 </ul>
