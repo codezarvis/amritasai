@@ -29,7 +29,7 @@
         <div class="main">
             <!--==============================header=================================-->
             <header>
-                <h1><a href="${pageContext.request.contextPath}/home"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt=""></a></h1>
+                <h1><a href="${pageContext.request.contextPath}/studentHome"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt=""></a></h1>
 
                 <div style="position:relative;top:0px;left:800px;width:250px;height:auto">
                     <strong>Welcome, <c:out value="${student.lastName} ${student.firstName}"></c:out></strong> !
@@ -41,10 +41,9 @@
                 <nav class="box-shadow">
                     <div>
                         <ul class="menu">
-                            <li class="home-page"><a href="${pageContext.request.contextPath}/home"><span></span></a></li>
-
-                            <li><a href="#">Change Password</a></li>
-                            <li><a href="${pageContext.request.contextPath}/postFeedBack">Post FeedBack</a></li>
+                            <li class="home-page"><a href="${pageContext.request.contextPath}/studentHome"><span></span></a></li>
+                            <li><a href="${pageContext.request.contextPath}/security">Setup Security Question</a></li>
+                            <li><a href="${pageContext.request.contextPath}/changePassword">Change Password</a></li>
                             <li><a href="${pageContext.request.contextPath}/signout">Signout</a></li>
                         </ul>
 
@@ -83,7 +82,7 @@
                             </div>
 
                             <div class="block-6">
-                                <h3>Subjects in Current Semister</h3>
+                                <h4>Subjects in Current Semister (Click Subject to Give FeedBack)</h4>
                                 <ul class="list-1">
 
                                     <c:forEach items="${subjectList}" var="subject">
