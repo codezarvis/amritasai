@@ -63,6 +63,11 @@ public class FeedBackController {
         String[] subd = feedBackForm.getSubd();
         String[] busg = feedBackForm.getBusg();
 
+        if(pun == null || comm == null || cls == null || dbts == null || subd == null || busg == null) {
+            request.setAttribute("msg", "You Must Select All the Parameters to Give FeedBack", WebRequest.SCOPE_REQUEST);
+            return "feedback";
+        }
+
         LOG.debug(feedBackForm);
 
         LOG.debug(pun[0]);
