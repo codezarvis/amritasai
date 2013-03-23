@@ -19,4 +19,7 @@ public interface FacultyMapService extends Service {
     List<FacultyMap> getAll();
 
     FacultyMap findFacultyBySubject(String subjectName);
+
+    FacultyMap find(String departmentName, String year, String semister, String subjectName);
+    
 }
