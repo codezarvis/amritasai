@@ -66,9 +66,8 @@
                     <div>
                         <ul class="menu">
                             <li class="home-page" class="current"><a href="${pageContext.request.contextPath}/admin"><span></span></a></li>
-                            <li ><a href="#">Services</a></li>
-                            <li><a href="#">Change Password</a></li>
-                            <li><a href="#">Reports</a></li>
+                           
+                            <li><a href="${pageContext.request.contextPath}/reports">Reports</a></li>
                             <li><a href="${pageContext.request.contextPath}/signout">Signout</a></li>
                         </ul>
 
