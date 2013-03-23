@@ -80,4 +80,26 @@ public class FacultyMapServiceImpl extends ServiceImpl implements FacultyMapServ
 
         return facultyMap;
     }
+
+    public FacultyMap find(String departmentName, String year, String semister, String subjectName) {
+        FacultyMap facultyMap = null;
+
+        Session session = HibernateUtils.currentSession();
+        try {
+            Query query = session.createQuery("from FacultyMap facultyMap where facultyMap.departmentName=:departmentName and facultyMap.year=:year and facultyMap.semister=:semister and facultyMap.subjectName=:subjectName");
+            query.setParameter("departmentName", departmentName);
+            query.setParameter("year", year);
+            query.setParameter("semister", semister);
+            query.setParameter("subjectName", subjectName);
+            facultyMap = (FacultyMap) query.uniqueResult();
+
+        }catch(Exception exception){
+            LOG.debug("FacultyMapServiceImpl", exception);
+        }finally {
+            HibernateUtils.closeSession();
+        }
+
+        return facultyMap;
+    }
+
 }
