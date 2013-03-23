@@ -66,6 +66,14 @@ public class FacultyMappingController {
         return array.toString();
     }
 
+    @RequestMapping(method = RequestMethod.GET, params={"departmentName", "year", "semValue","subject"})
+    @ResponseBody
+    public String getFacultyName(@ModelAttribute FacultyMapForm facultyMapForm, @RequestParam String departmentName, String year, String semValue, String subject) {
+        FacultyMap facultyMap = ServiceUtils.getFacultyMapService().find(departmentName, year, semValue, subject);
+        return facultyMap.getFacultyName();
+       
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public String postFacultyMap(@ModelAttribute FacultyMapForm facultyMapForm) {
