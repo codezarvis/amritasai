@@ -17,4 +17,6 @@ public interface FacultyService extends Service{
     void create(Faculty faculty);
 
     List<Faculty> getAll();
+
+
 }
