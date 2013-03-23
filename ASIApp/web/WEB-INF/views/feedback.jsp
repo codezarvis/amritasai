@@ -62,7 +62,7 @@
         <div class="main">
             <!--==============================header=================================-->
             <header>
-                <h1><a href="${pageContext.request.contextPath}/home"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt=""></a></h1>
+                <h1><a href="${pageContext.request.contextPath}/studentHome"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt=""></a></h1>
 
                 <div style="position:relative;top:0px;left:800px;width:250px;height:auto">
                     <strong>Welcome, <c:out value="${student.lastName} ${student.firstName}"></c:out></strong> !
@@ -74,10 +74,10 @@
                 <nav class="box-shadow">
                     <div>
                         <ul class="menu">
-                            <li class="home-page"><a href="${pageContext.request.contextPath}/home"><span></span></a></li>
+                            <li class="home-page"><a href="${pageContext.request.contextPath}/studentHome"><span></span></a></li>
 
-                            <li><a href="#">Change Password</a></li>
-                            <li><a href="${pageContext.request.contextPath}/postFeedBack">Post FeedBack</a></li>
+                            <li><a href="${pageContext.request.contextPath}/changePassword">Change Password</a></li>
+                            
                             <li><a href="${pageContext.request.contextPath}/signout">Signout</a></li>
                         </ul>
 
@@ -91,8 +91,8 @@
                     <div class="grid_12">
                         <div class="wrap pad-3">
 
-                            <c:if test="${not empty successMsg}">
-                                <p><font color="green">${successMsg}</font></p>
+                            <c:if test="${not empty msg}">
+                                <p><font color="red">${msg}</font></p>
                             </c:if>
 
                             <sf:form modelAttribute="feedBackForm">
@@ -146,7 +146,7 @@
                                 </table>
 
                                 <div class="btns">
-                                    <input type="submit" value="POSt FeedBack"/>
+                                    <input type="submit" value="Post FeedBack" class="customButton" />
                                 </div>
 
                             </sf:form>
