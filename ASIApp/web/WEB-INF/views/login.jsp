@@ -145,7 +145,7 @@
                                             <div id="appHome_Ajax_Loading" class="btns" style="display:none;">
                                                 <img align="absmiddle" src="resources/images/spinner.gif">&nbsp;Processing...
                                             </div>
-                                            <div class="btns"><a href="#" class="button" id="signInLink">Sign In</a><a href="#" class="button">Forgot Password ?</a></div>
+                                            <div class="btns"><a href="#" class="button" id="signInLink">Sign In</a><a href="${pageContext.request.contextPath}/getPassword" class="button">Forgot Password ?</a></div>
                                         </fieldset>
                                     </sf:form>
 
