@@ -71,10 +71,10 @@ public class RegisterStudentController {
             return response;
         }
 
-        if (subjectName == null || subjectName.length() == 0 || subjectName.equals("Select Subject")) {
-            response = "Subject Name is Required !";
-            return response;
-        }
+//        if (subjectName == null || subjectName.length() == 0 || subjectName.equals("Select Subject")) {
+//            response = "Subject Name is Required !";
+//            return response;
+//        }
 
 
         String test = studentForm.getSubject();
@@ -93,13 +93,13 @@ public class RegisterStudentController {
             return response;
         }
 
-        Subject subjectObject = ServiceUtils.getSubjectService().findBySubjectName(subject);
-
-        if (subjectObject == null) {
-            response = "Invalid Subject !";
-            return response;
-        }        
-        
+//        Subject subjectObject = ServiceUtils.getSubjectService().findBySubjectName(subject);
+//
+//        if (subjectObject == null) {
+//            response = "Invalid Subject !";
+//            return response;
+//        }
+//
         Student studentObject = ServiceUtils.getStudentService().findByStudentId(studentId);
         AppUser appUserObject = ServiceUtils.getAppUserService().findByUserName(studentId);
 
@@ -120,7 +120,7 @@ public class RegisterStudentController {
         student.setDepartmentName(studentForm.getDepartmentName());
         student.setDepartmentCode(department.getDepartmentCode());
         student.setSubjectName(subject);
-        student.setSubjectCode(subjectObject.getSubjectCode());
+        //student.setSubjectCode(subjectObject.getSubjectCode());
         student.setYear(studentForm.getYear());
         student.setSemister(studentForm.getSemister());
         student.setCreatedBy(1);
